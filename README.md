@@ -1,1 +1,5 @@
 # CanvasStudyNote
+
+## Copyright
+
+Shingo Hosoda
