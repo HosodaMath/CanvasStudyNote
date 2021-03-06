@@ -19,7 +19,8 @@ let rect_location1: Vector2;
 let rect_size1: Vector2;
 let rect_location2: Vector2;
 let rect_size2: Vector2;
-let size: number;
+let size_x: number;
+let size_y: number;
 let angle: number;
 const init = () => {
   canvas.width = width = window.innerWidth;
@@ -32,9 +33,10 @@ const init = () => {
 }
 
 const setRectangle = () => {
-  size = width * 0.2;
+  size_x = width * 0.2;
+  size_y = height * 0.2;
   rect_location1 = new Vector2(0.0, 0.0);
-  rect_size1 = new Vector2(size, size);
+  rect_size1 = new Vector2(size_x, size_y);
   rect_location2 = new Vector2(0.0, 0.0);
   rect_size2 = rect_size1;
 }
@@ -56,31 +58,31 @@ const renderTranslate = () => {
   let rect1: Rectangle = new Rectangle(gl, rect_location1, rect_size1);
   /// 0°(元の位置)
   gl.save();
-  gl.translate(width / 4.0 - size * 0.5, height / 2.0 - size * 0.5);
+  gl.translate(width / 4.0 - size_x * 0.5, height / 2.0 - size_y * 0.5);
   rect1.draw_fill("rgba(240, 255, 240, 0.8)");
   gl.restore();
 
   /// 左上を軸とした回転アニメーション
   gl.save();
-  gl.translate(width / 4.0 - size * 0.5, height / 2.0 - size * 0.5);
+  gl.translate(width / 4.0 - size_x * 0.5, height / 2.0 - size_y * 0.5);
   gl.rotate(Mathematics.degTorad(angle));
   rect1.draw_fill("rgba(240, 255, 240, 0.8)");
   gl.restore();
 
-  // rectangle(Square)の中心を軸とした回転
+  // rectangleの中心を軸とした回転
   let rect2: Rectangle = new Rectangle(gl, rect_location2, rect_size2);
   /// 0°(元の位置)
   gl.save();
-  gl.translate(width - width / 4.0 - size * 0.5, height / 2.0 - size * 0.5);
+  gl.translate(width - width / 4.0 - size_x * 0.5, height / 2.0 - size_y * 0.5);
   rect2.draw_fill("rgba(240, 240, 255, 0.8)");
   gl.restore();
 
   /// 中心を軸とした回転アニメーション
   gl.save();
-  gl.translate(width - width / 4.0 - size * 0.5, height / 2.0 - size * 0.5);
-  gl.translate(size * 0.5, size * 0.5);
+  gl.translate(width - width / 4.0 - size_x * 0.5, height / 2.0 - size_y * 0.5);
+  gl.translate(size_x * 0.5, size_y * 0.5);
   gl.rotate(Mathematics.degTorad(angle));
-  gl.translate(-size * 0.5, -size * 0.5);
+  gl.translate(-size_x * 0.5, -size_y * 0.5);
   rect2.draw_fill("rgba(240, 240, 255, 0.8)");
   gl.restore();
   
