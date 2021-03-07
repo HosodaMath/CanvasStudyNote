@@ -12,6 +12,10 @@ h3 {
   margin-left: 20px;
 }
 
+p {
+  margin-left: 20px;
+}
+
 canvas {
   position: absolute;
   top: 0px;

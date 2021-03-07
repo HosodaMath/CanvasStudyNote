@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="practice_scale" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="canvas api scale" />
+  <meta property="og:description" content="これはCanvas APIのScaleの練習です。" />
+  <title>scale3</title>
+  <link rel="stylesheet" href="css/sanitize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script type="module" src="dist/scale3.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <h1>Scale</h1>
+  </header>
+  <main>
+    <h2>Polygonの拡大と縮小 Animation</h2>
+    <h3>中心を軸として拡大縮小をおこなう</h3>
+    <p>xy: Math.abs(Math.sin(scale_value) -> xy: Math.abs(Math.cos(scale_value) -> x:  Math.cos(init_scale) y: Math.sin(init_scale)</p>
+    <canvas id="canvas" width="512" height="512"></canvas>
+  </main>
+</body>
+
+</html>

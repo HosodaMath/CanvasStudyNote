@@ -62,7 +62,7 @@ const renderScale = () => {
     gl.scale(2, 2);
     base_rect.draw_fill("rgba(240, 240, 100, 0.8)");
     gl.restore();
-    /// Scale(0.5, 0.5)つまり2倍の大きさのRectangle
+    /// Scale(0.5, 0.5)つまり1/2の大きさのRectangle
     gl.save();
     gl.translate(width - width / 4.0 - SHIFT, height / 2.0 - SHIFT);
     gl.scale(0.5, 0.5);
